@@ -6,14 +6,14 @@ class PortfoliosController < ApplicationController
   end
 
   def new
-    @portfolio = Portfolio.new
+    @portfolio_item = Portfolio.new
   end
 
   def create
     @portfolio = Portfolio.new(portfolio_params)
 
     if @portfolio.save
-      redirect_to @portfolio
+      redirect_to portfolios_path
     else
       render 'new'
     end
@@ -27,7 +27,8 @@ class PortfoliosController < ApplicationController
 
   def update
     if @portfolio.update_attributes(portfolio_params)
-      redirect_to @portfolio
+      flash[:success] = "Your portfolio item is now live"
+      redirect_to portfolios_path
     else
       render 'edit'
     end
@@ -42,8 +43,7 @@ class PortfoliosController < ApplicationController
   private
 
     def portfolio_params
-      params.require(:portfolio).permit(:title, :subtitle, :body, :main_image,
-                                        :thumb_image)
+      params.require(:portfolio).permit(:title, :subtitle, :body)
     end
 
     def find_portfolio
