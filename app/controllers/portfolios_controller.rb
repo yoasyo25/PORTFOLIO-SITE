@@ -10,9 +10,10 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio_item = Portfolio.new(portfolio_params)
 
-    if @portfolio.save
+    if @portfolio_item.save
+      flash[:success] = "Your portfolio item is now live"
       redirect_to portfolios_path
     else
       render 'new'
@@ -26,8 +27,8 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    if @portfolio.update_attributes(portfolio_params)
-      flash[:success] = "Your portfolio item is now live"
+    if @portfolio_item.update_attributes(portfolio_params)
+      flash[:success] = "Your portfolio item is has been edited"
       redirect_to portfolios_path
     else
       render 'edit'
@@ -35,7 +36,7 @@ class PortfoliosController < ApplicationController
   end
 
   def destroy
-    @portfolio.destroy
+    @portfolio_item.destroy
 
     render 'index'
   end
@@ -47,7 +48,7 @@ class PortfoliosController < ApplicationController
     end
 
     def find_portfolio
-      @portfolio = Portfolio.find(params[:id])
+      @portfolio_item = Portfolio.find(params[:id])
     end
 
 end
