@@ -17,10 +17,14 @@
   <%= f.text_area :body %>
 </div>
 
-<div class="">
-  <%#= f.label :thumb_image %>
-  <%#= f.text_field :thumb_image %>
-</div>
+<ul>
+  <%= f.fields_for :technologies do |technology_form| %>
+  <li>
+    <%= technology_form.label      :name %>
+    <%= technology_form.text_field :name %>
+  </li>
+  <% end %>
+</ul>
 
 <div class="">
   <%= f.submit %>
