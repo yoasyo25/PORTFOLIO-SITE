@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+3.times do |topic|
+  Topic.create!(
+  title: "Topic #{topic}"
+  )
+end
+
+puts "3 topics created"
+
 10.times do |blog|
   Blog.create!(
     title: "My blog post #{blog}",
@@ -16,7 +24,8 @@
     especially in dynamic languages like Ruby. Just as functional abstraction
     allows us to avoid duplicating code that is the same or nearly the same,
     metaprogramming allows us to avoid duplicating similar concepts when they
-    recur throughout an application."
+    recur throughout an application.",
+    topic_id: Topic.last.id
     )
   end
 
@@ -31,12 +40,25 @@ end
 
 puts "5 skills created"
 
-9.times do |portfolio_item|
+8.times do |portfolio_item|
   Portfolio.create!(
   title: "Portfolio title #{portfolio_item}",
-  subtitle: "My greate service",
+  subtitle: "Ruby on Rails",
   body: "Metaprogramming is primarily about simplicity. One of the easiest ways
-  to get a feel for metaprogramming is to look for repeated code and factor it 
+  to get a feel for metaprogramming is to look for repeated code and factor it
+  out. Redundant code can be factored into functions; redundant functions or
+  patterns can often be factored out through the use of metaprogramming.",
+  main_image: "http://placehold.it/600x400",
+  thumb_image: "http://placehold.it/350x200"
+  )
+end
+
+1.times do |portfolio_item|
+  Portfolio.create!(
+  title: "Portfolio title #{portfolio_item}",
+  subtitle: "Ruby",
+  body: "Metaprogramming is primarily about simplicity. One of the easiest ways
+  to get a feel for metaprogramming is to look for repeated code and factor it
   out. Redundant code can be factored into functions; redundant functions or
   patterns can often be factored out through the use of metaprogramming.",
   main_image: "http://placehold.it/600x400",
