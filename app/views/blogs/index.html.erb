@@ -5,22 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th>Blog Title</th>
+      <th>Date</th>
       <th>Body</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @blogs %>
   </tbody>
 </table>
 
