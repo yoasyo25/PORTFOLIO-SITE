@@ -7,12 +7,6 @@ GIT
       popper_js (>= 1.9.9, < 2.0)
       sass (>= 3.4.19)
 
-GIT
-  remote: https://github.com/yoasyo25/assefa_view_tool
-  revision: 305e13fcabc17b493a20f08d85660e2929bfaef1
-  specs:
-    assefa_view_tool (0.1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -54,6 +48,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    assefa_view_tool (0.1.0)
     autoprefixer-rails (7.1.1)
       execjs
     bcrypt (3.1.11)
@@ -196,7 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  assefa_view_tool!
+  assefa_view_tool (~> 0.1.0)
   bootstrap!
   byebug
   coffee-rails (~> 4.2)
