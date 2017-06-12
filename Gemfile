@@ -56,3 +56,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.2'
 gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'assefa_view_tool', git: 'https://github.com/yoasyo25/assefa_view_tool'
