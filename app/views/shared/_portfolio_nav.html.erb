@@ -1,0 +1,34 @@
+<div class="collapse bg-inverse" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 py-4">
+        <h4 class="text-white">About</h4>
+        <p class="text-muted">I am a student at the Turing School of Software
+          &amp; Design. I am interested in developing software that contributes
+          to social change and plan to combine my technical skills with my
+          political science background in order to assist public institutions and
+          non-profit organizations to better utilize technology to promote
+          transparency and accountability.</p>
+      </div>
+      <div class="col-sm-4 py-4">
+        <h4 class="text-white">Explore</h4>
+        <ul class="list-unstyled">
+          <li><%= link_to "Home",    root_path, class: "text-white" %></li>
+          <li><%= link_to "About",   about_me_path, class: "text-white" %></li>
+          <li><%= link_to "Contact", contact_path, class: "text-white" %></li>
+          <li><%= link_to "Blogs",   blogs_path, class: "text-white" %></li>
+          <li><%= link_to "Portfolio", portfolios_path, class: "text-white" %></li>
+          <li><%= login_helper "text-white" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-inverse bg-inverse">
+  <div class="container d-flex justify-content-between">
+    <a href="#" class="navbar-brand">Yohanan Assefa</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
