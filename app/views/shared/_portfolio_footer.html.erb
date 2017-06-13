@@ -1,6 +1,8 @@
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
+      <%= link_to "Edit Portfolio", edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin)%>
+      <%= link_to "View All Portfolio Items", portfolios_path %> /
       <a href="#">Back to top</a>
     </p>
     <p>
