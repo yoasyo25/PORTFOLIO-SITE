@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in:  'login',
                                              sign_out: 'logout',
                                              sign_up:  'register'}
-  resources :portfolios, except: [:show]
+  resources :portfolios, except: [:show] do
+    put :sort, on: :collection
+  end 
   get 'ruby-items', to: 'portfolios#ruby'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
 
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
     member do
       get :toggle_status
     end
-  end 
+  end
 
   root to: 'pages#home'
 end

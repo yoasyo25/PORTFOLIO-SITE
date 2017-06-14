@@ -1,11 +1,18 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   access all: [:show, :index, :ruby], user: {except: [:destroy, :new, :create,
-                                            :update, :edit]}, site_admin: :all
+                                            :update, :edit, :sort]}, site_admin: :all
   layout "portfolio"
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
+  end
+
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+    render nothing: true
   end
 
   def ruby
@@ -48,6 +55,7 @@ class PortfoliosController < ApplicationController
     flash[:success] = "Your portfolio was deleted"
     redirect_to portfolios_path
   end
+
 
   private
 
