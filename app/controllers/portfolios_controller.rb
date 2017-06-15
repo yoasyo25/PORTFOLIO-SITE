@@ -26,11 +26,12 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio_item = Portfolio.new(portfolio_params)
 
-    if @portfolio_item.save
-      flash[:success] = "Your portfolio item is now live"
-      redirect_to portfolios_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @portfolio_item.save
+        format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
+      else
+        format.html { render :new }
+      end
     end
   end
 
@@ -41,11 +42,12 @@ class PortfoliosController < ApplicationController
   end
 
   def update
-    if @portfolio_item.update_attributes(portfolio_params)
-      flash[:success] = "Your portfolio item is has been edited"
-      redirect_to portfolios_path
-    else
-      render 'edit'
+    respond_to do |format|
+      if @portfolio_item.update(portfolio_params)
+        format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
+      else
+        format.html { render :edit }
+      end
     end
   end
 

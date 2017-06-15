@@ -18,7 +18,7 @@
     <%= render "shared/blog_masthead" %>
 
     <div class="container">
-      
+
       <div class="row">
 
         <%= yield %>
@@ -29,6 +29,7 @@
 
       <%= render "shared/blog_footer" %>
 
+      <%= alerts %>
       <%= source_helper("blog") %>
     </div>
   </body>
