@@ -2,7 +2,7 @@ class CommentBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(comment)
-    ActionCable.server.broadcast "blog_#{comment.blog.id}_channel",
+    ActionCable.server.broadcast "blogs_#{comment.blog.id}_channel",
     comment: render_comment(comment)
   end
 
@@ -12,4 +12,4 @@ class CommentBroadcastJob < ApplicationJob
       CommentsController.render partial: 'comments/comment',
       locals: { comment: comment }
     end
-end 
+end
