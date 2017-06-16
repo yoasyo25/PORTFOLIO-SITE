@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
       @seo_keyword = @blog.body
     else
       redirect_to blogs_path, notice: "You are not authorized to access this page"
-    end 
+    end
   end
 
   # GET /blogs/new
@@ -94,6 +94,6 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
