@@ -33,7 +33,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.2'
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'friendly_id', '~> 5.1.0'
 gem 'assefa_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.7', '>= 1.7.5'
