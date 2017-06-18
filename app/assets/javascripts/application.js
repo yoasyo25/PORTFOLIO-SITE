@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery3
-//= require bootstrap-sprockets
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require jquery-ui
 //= require html.sortable
 //= require cocoon
