@@ -8,6 +8,22 @@
       <div class="col-md-4">
         <%= image_tag "yohanan.jpg",
         width: "250", alt: "Yohanan Assefa's Profile Image", class: 'profile-img' %>
+        <div class="skills">
+        <% @skills.each do |skill| %>
+          <div class="skill">
+            <h4><%= skill.title %></h4>
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-warning"
+                role="progressbar"
+                aria-valuenow="<%= skill.percent_utilized %>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+              ></div>
+            </div>
+          </div>
+        <% end %>
+        </div>
       </div>
 
       <div class="col-md-8">
@@ -25,31 +41,7 @@
             project management. As a Turing graduate, I will have the skills to turn
             HTML and CSS templates into production-ready applications.</p>
 
-          <p>
-            <button
-            class="btn btn-primary"
-              type="button"
-              data-toggle="collapse"
-              data-target="#studentHistory"
-              aria-expanded="false"
-              aria-controller="studentHistory"
-              >
-              Programming Languages
-            </button>
-          </p>
-
-          <p>
-            <div class="collapse" id="studentHistory">
-              <div class="card card-block">
-                Ruby
-              </div>
-              <div class="card card-block">
-                Rails
-              </div>
-            </div>
-          </p>
-
-
+          
       </div>
     </div>
   </div>
