@@ -1,27 +1,48 @@
-<h1>About Me</h1>
+<div class="app-card-container">
+  <div class="card">
+    <h1>About Me</h1>
 
-<hr>
+    <hr>
 
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag "yohanan.jpg",
-    width: "250", alt: "Yohanan Assefa's Profile Image" %>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag "yohanan.jpg",
+        width: "250", alt: "Yohanan Assefa's Profile Image", class: 'profile-img' %>
+        <div class="skills">
+        <% @skills.each do |skill| %>
+          <div class="skill">
+            <h4><%= skill.title %></h4>
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped bg-warning"
+                role="progressbar"
+                aria-valuenow="<%= skill.percent_utilized %>"
+                aria-valuemax="100"
+                style="width: <%= skill.percent_utilized %>%"
+              ></div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <p>After five-years of working at a non-profit to promote democracy and human
+          rights in East Africa, I am transitioning to become a software developer with
+          an emphasis on civic tech.<p/>
+
+          <p>I am currently a backend engineering student at the Turing School of
+            Software &amp; Design. In the next seven months, I will develop strong
+            foundations in object-oriented programming and design. I am currently
+            building full-stack Rails applications and will move into providing and
+            consuming APIs. In my final quarter, I will have an opportunity to learn
+            the fundamentals of JavaScript, build with React, while mixing in other
+            production techniques like message queues, continuous integration, and agile
+            project management. As a Turing graduate, I will have the skills to turn
+            HTML and CSS templates into production-ready applications.</p>
+
+          
+      </div>
+    </div>
   </div>
-
-  <div class="col-md-8">
-    <p>After five-years of working at a non-profit to promote democracy and human
-    rights in East Africa, I am transitioning to become a software developer with
-    an emphasis on civic tech.<p/>
-
-    <p>I am currently a backend engineering student at the Turing School of
-    Software &amp; Design. In the next seven months, I will develop strong
-    foundations in object-oriented programming and design. I am currently
-    building full-stack Rails applications and will move into providing and
-    consuming APIs. In my final quarter, I will have an opportunity to learn
-    the fundamentals of JavaScript, build with React, while mixing in other
-    production techniques like message queues, continuous integration, and agile
-    project management. As a Turing graduate, I will have the skills to turn
-    HTML and CSS templates into production-ready applications.</p>
-  </div>
-
 </div>

@@ -1,10 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+User.create!(
+  email: "nanahoy@gmail.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "yohanan",
+  roles: "site_admin"
+)
+puts "1 admin user created"
+
+User.create!(
+  email: "test@example.com",
+  password: "password",
+  password_confirmation: "password",
+  name: "Test User",
+)
+puts "1 regular user created"
 
 3.times do |topic|
   Topic.create!(
@@ -16,7 +25,7 @@ puts "3 topics created"
 
 10.times do |blog|
   Blog.create!(
-    title: "My blog post #{blog}",
+    title: "My blog post #{blog + 1}",
     body:  "At a high level, metaprogramming is useful in working toward the DRY
     principle (Don't Repeat Yourself). Also referred to as 'Once and Only Once,'
     the DRY principle dictates that you should only need to express a particular
@@ -27,18 +36,21 @@ puts "3 topics created"
     recur throughout an application.",
     topic_id: Topic.last.id
     )
-  end
+end
 
 puts "10 blog posts created "
 
-5.times do |skill|
   Skill.create!(
-    title:            "Rails #{skill}",
-    percent_utilized: 15
+    title:            "Ruby on Rails",
+    percent_utilized: 60
   )
-end
 
-puts "5 skills created"
+  Skill.create!(
+    title:            "Ruby",
+    percent_utilized: 40
+  )
+
+puts "2 skills created"
 
 8.times do |portfolio_item|
   Portfolio.create!(
